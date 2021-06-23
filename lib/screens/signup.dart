@@ -151,28 +151,55 @@ class _SignUpBodyState extends State<SignUpBody> {
                                 number: number);
 
                             try {
-                              SignUpModel credential = await ProjectDB.instance
-                                  .readCredentials(email, password);
-
-                              if (credential.email == email) {
+                              if (number == '' ||
+                                  username == '' ||
+                                  email == '' ||
+                                  password == '') {
                                 return showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) {
-                                      return CupertinoAlertDialog(
-                                        title: Text('Email already exists',
-                                            style: TextStyle(
-                                              fontSize: 15,
-                                            )),
-                                        content: Text('Try another one'),
-                                        actions: [
-                                          TextButton(
-                                              onPressed: () {
-                                                Navigator.pop(context);
-                                              },
-                                              child: Text('Close'))
-                                        ],
-                                      );
-                                    });
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return CupertinoAlertDialog(
+                                      title: Text('Alert',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                          )),
+                                      content:
+                                          Text('Please provide al details'),
+                                      actions: [
+                                        TextButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            child: Text('Close'))
+                                      ],
+                                    );
+                                  },
+                                );
+                              } else {
+                                SignUpModel credential = await ProjectDB
+                                    .instance
+                                    .readCredentials(email, password);
+
+                                if (credential.email == email) {
+                                  return showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return CupertinoAlertDialog(
+                                          title: Text('Email already exists',
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                              )),
+                                          content: Text('Try another one'),
+                                          actions: [
+                                            TextButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                child: Text('Close'))
+                                          ],
+                                        );
+                                      });
+                                }
                               }
                             } catch (e) {
                               await ProjectDB.instance.create(credentials);

@@ -97,13 +97,40 @@ class _LoginWState extends State<LoginW> {
                                 key.currentState.save();
 
                                 try {
-                                  SignUpModel credential = await ProjectDB
-                                      .instance
-                                      .readCredentials(email, password);
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return Home();
-                                  }));
+                                  if (email == '' || password == '') {
+                                    return showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return CupertinoAlertDialog(
+                                          title: Text('Alert',
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                              )),
+                                          content:
+                                              Text('Please provide al details'),
+                                          actions: [
+                                            TextButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                child: Text('Close'))
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  } else {
+                                    SignUpModel credential = await ProjectDB
+                                        .instance
+                                        .readCredentials(email, password);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return Home();
+                                        },
+                                      ),
+                                    );
+                                  }
                                 } catch (e) {
                                   return showDialog(
                                     context: context,
