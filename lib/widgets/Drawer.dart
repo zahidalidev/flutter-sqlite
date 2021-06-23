@@ -20,13 +20,14 @@ class _DrawerWState extends State<DrawerW> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                      margin: EdgeInsets.only(top: 10.0),
+                      margin: EdgeInsets.only(left: 30, top: 40.0),
                       child: Text('Zahid Ali',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.w600))),
                   Container(
+                      margin: EdgeInsets.only(left: 30, top: 10.0),
                       child: Text('m.zahidalidev@gmail.com',
                           style: TextStyle(
                               color: Colors.white,
@@ -35,7 +36,7 @@ class _DrawerWState extends State<DrawerW> {
                 ],
               ),
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.cyan,
               ),
             ),
           ),
