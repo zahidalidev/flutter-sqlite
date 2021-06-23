@@ -1,4 +1,5 @@
 import 'package:assignment11/main.dart';
+import 'package:assignment11/screens/home.dart';
 import 'package:assignment11/screens/transaction.dart';
 import 'package:flutter/material.dart';
 
@@ -50,6 +51,19 @@ class _DrawerWState extends State<DrawerW> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return Transactions();
+              }));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.account_balance_wallet_outlined),
+            title: Text('Home',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                )),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Home();
               }));
             },
           ),

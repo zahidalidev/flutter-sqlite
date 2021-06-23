@@ -43,7 +43,7 @@ class _TransactionWState extends State<TransactionW> {
             Container(
               margin: EdgeInsets.only(bottom: 20),
               child: Text(
-                'Enter your transaction details.',
+                'Enter transaction details.',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
               ),
             ),
@@ -58,16 +58,9 @@ class _TransactionWState extends State<TransactionW> {
                             id = int.parse(value);
                           });
                         },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
                         decoration: InputDecoration(
                           labelText: 'Id',
                           labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                          prefixIcon: Icon(Icons.description),
                           filled: true,
                           fillColor: Colors.grey[200],
                           border: new OutlineInputBorder(
@@ -84,16 +77,9 @@ class _TransactionWState extends State<TransactionW> {
                             accountId = value.toString();
                           });
                         },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
                         decoration: InputDecoration(
                           labelText: 'Account ID',
                           labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                          prefixIcon: Icon(Icons.description),
                           filled: true,
                           fillColor: Colors.grey[200],
                           border: new OutlineInputBorder(
@@ -110,16 +96,9 @@ class _TransactionWState extends State<TransactionW> {
                             description = value.toString();
                           });
                         },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
                         decoration: InputDecoration(
                           labelText: 'Description',
                           labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                          prefixIcon: Icon(Icons.description),
                           filled: true,
                           fillColor: Colors.grey[200],
                           border: new OutlineInputBorder(
@@ -136,16 +115,9 @@ class _TransactionWState extends State<TransactionW> {
                             amount = value.toString();
                           });
                         },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
                         decoration: InputDecoration(
                           labelText: 'Amount',
                           labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                          prefixIcon: Icon(Icons.attach_money),
                           filled: true,
                           fillColor: Colors.grey[200],
                           border: new OutlineInputBorder(
