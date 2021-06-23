@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:assignment11/widgets/Drawer.dart';
+import 'package:assignment11/widgets/common/AppshowDatePicker.dart';
 import 'package:flutter/material.dart';
 import 'package:assignment11/main.dart';
 
@@ -38,19 +41,96 @@ class _HomeState extends State<Home> {
                 width: 400,
                 child: TabBarView(children: [
                   Container(
-                    margin: EdgeInsets.only(top: 20, bottom: 20, right: 30),
+                    margin: EdgeInsets.only(top: 20, bottom: 20),
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Daily',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Weekly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Monthly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Yearly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                            ],
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: 30, bottom: 10, right: 100),
+                            child: Text("Pick 1st and 2nd Date to filter",
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.bold)),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              AppshowDatePicker(
+                                label: 'Pick 1st date',
+                              ),
+                              AppshowDatePicker(
+                                label: 'Pick 2nd date',
+                              ),
+                            ],
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 20),
+                          ),
                           DataTable(
-                            columnSpacing: 20,
+                            columnSpacing: 30,
                             dataRowHeight: 60,
                             columns: const <DataColumn>[
                               DataColumn(label: Text('id')),
                               DataColumn(label: Text('AccountId')),
                               DataColumn(label: Text('Description')),
                               DataColumn(label: Text('drAmount')),
-                              DataColumn(label: Text('CrAmount')),
                             ],
                             rows: const <DataRow>[
                               DataRow(
@@ -58,7 +138,6 @@ class _HomeState extends State<Home> {
                                   DataCell(Text('1')),
                                   DataCell(Text('1')),
                                   DataCell(Text('description')),
-                                  DataCell(Text('\$30')),
                                   DataCell(Text('\$70')),
                                 ],
                               ),
@@ -67,7 +146,6 @@ class _HomeState extends State<Home> {
                                   DataCell(Text('2')),
                                   DataCell(Text('2')),
                                   DataCell(Text('description')),
-                                  DataCell(Text('\$24')),
                                   DataCell(Text('\$40')),
                                 ],
                               ),
@@ -76,7 +154,6 @@ class _HomeState extends State<Home> {
                                   DataCell(Text('3')),
                                   DataCell(Text('3')),
                                   DataCell(Text('description')),
-                                  DataCell(Text('\$20')),
                                   DataCell(Text('\$50')),
                                 ],
                               ),
@@ -91,14 +168,91 @@ class _HomeState extends State<Home> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Daily',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Weekly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Monthly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Yearly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                            ],
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: 30, bottom: 10, right: 100),
+                            child: Text("Pick 1st and 2nd Date to filter",
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.bold)),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              AppshowDatePicker(
+                                label: 'Pick 1st date',
+                              ),
+                              AppshowDatePicker(
+                                label: 'Pick 2nd date',
+                              ),
+                            ],
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 20),
+                          ),
                           DataTable(
-                            columnSpacing: 20,
+                            columnSpacing: 30,
                             dataRowHeight: 60,
                             columns: const <DataColumn>[
                               DataColumn(label: Text('id')),
                               DataColumn(label: Text('AccountId')),
                               DataColumn(label: Text('Description')),
-                              DataColumn(label: Text('drAmount')),
                               DataColumn(label: Text('CrAmount')),
                             ],
                             rows: const <DataRow>[
@@ -107,7 +261,6 @@ class _HomeState extends State<Home> {
                                   DataCell(Text('1')),
                                   DataCell(Text('1')),
                                   DataCell(Text('description')),
-                                  DataCell(Text('\$30')),
                                   DataCell(Text('\$70')),
                                 ],
                               ),
@@ -117,7 +270,6 @@ class _HomeState extends State<Home> {
                                   DataCell(Text('2')),
                                   DataCell(Text('description')),
                                   DataCell(Text('\$24')),
-                                  DataCell(Text('\$40')),
                                 ],
                               ),
                               DataRow(
@@ -126,7 +278,6 @@ class _HomeState extends State<Home> {
                                   DataCell(Text('3')),
                                   DataCell(Text('description')),
                                   DataCell(Text('\$20')),
-                                  DataCell(Text('\$50')),
                                 ],
                               ),
                             ],
@@ -140,6 +291,84 @@ class _HomeState extends State<Home> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Daily',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Weekly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Monthly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                              ElevatedButton(
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                                  child: Text(
+                                    'Yearly',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.cyan,
+                                ),
+                                onPressed: () async {},
+                              ),
+                            ],
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: 30, bottom: 10, right: 100),
+                            child: Text("Pick 1st and 2nd Date to filter",
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.bold)),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              AppshowDatePicker(
+                                label: 'Pick 1st date',
+                              ),
+                              AppshowDatePicker(
+                                label: 'Pick 2nd date',
+                              ),
+                            ],
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 20),
+                          ),
                           DataTable(
                             columnSpacing: 20,
                             dataRowHeight: 60,
