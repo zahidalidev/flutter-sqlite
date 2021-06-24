@@ -172,7 +172,7 @@ class _TransactionsState extends State<Transactions> {
                                               title: Text(
                                                 'Transaction Added',
                                                 style: TextStyle(
-                                                  fontSize: 36,
+                                                  fontSize: 15,
                                                 ),
                                               ),
                                               actions: [
